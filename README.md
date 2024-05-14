@@ -1,6 +1,5 @@
-# E-Commerce Analytics
-Apache Flink Application For Real-Time Data Analysis with Docker Compose to orchestrate the necessary infrastructure components, including Apache Flink, Elasticsearch, and Postgres.
-The application processes financial transaction data from Kafka, performs aggregations, and stores the results in both Postgres and Elasticsearch for further analysis.
+# E-Commerce Analytics With Apache Flink
+This repository hosts an Apache Flink application tailored for real-time data analysis in an e-commerce environment. Docker Compose is employed to orchestrate the necessary infrastructure components, which include Apache Flink, Elasticsearch, and Postgres. The application ingests financial transaction data from Kafka, performs aggregations, and persists the results in both Postgres and Elasticsearch for further analysis.
 
 ## Architecture
 ![System Architecture](https://github.com/FA3001/Streaming_with_Apache_Flink/raw/main/Visualizaton/System%20Architecture.png)
@@ -42,14 +41,19 @@ The application processes financial transaction data from Kafka, performs aggreg
 1. Clone this repository.
 2. Run docker-compose up to start the required services (Apache Flink, Elasticsearch, Postgres).
 3. The Sales Transaction Generator main.py helps to generate the sales transactions into Kafka.
-4. Download Flink 1.18.0 [Flink 1.18.0](https://archive.apache.org/dist/flink/flink-1.18.0/flink-1.18.0-bin-scala_2.12.tgz)，unzip and get flink-1.18.0 directory.
+4. Download Flink 1.18.0 [Flink 1.18.0](https://archive.apache.org/dist/flink/flink-1.18.0/flink-1.18.0-bin-scala_2.12.tgz) unzip and get flink-1.18.0 directory.
 5. Run ```bash start-cluster.sh``` to start it will be on port 8081.
 6. Download Maven and run ```bash mvn clean, mvn compile, mvn package``` to generate the JARFILE.
 7. Run ```bash flink 1.18.0/bin/flink run -c FlinkEcommerce.DataStreamJob <JARFILE_path>```.
-8. Open Flink from http://127.0.0.1:8081/ to see the runing job. ![flink](https://github.com/FA3001/Streaming_with_Apache_Flink/blob/main/Visualizaton/Flink.PNG)
+8. Open Flink from http://127.0.0.1:8081/ to see the runing job.
+
+ ![flink](https://github.com/FA3001/Streaming_with_Apache_Flink/blob/main/Visualizaton/Flink.PNG)
+
 9. Open Elasticsearch from http://127.0.0.1:5601/ and from the left menu choose dev.
 10. Run ```bash GET transaction ``` this will print the data in json format like
-    ![data](https://github.com/FA3001/Streaming_with_Apache_Flink/blob/main/Visualizaton/ssss.PNG)
+
+![data](https://github.com/FA3001/Streaming_with_Apache_Flink/blob/main/Visualizaton/ssss.PNG)
+
 11. To create the dashboard choose from left menu ```bash Dashboard``` and choose the data then create the visualizations.
 
 ## Dasboard:
